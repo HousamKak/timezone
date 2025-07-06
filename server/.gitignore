@@ -1,0 +1,544 @@
+# =============================================================================
+# OrbiMed Analyst Trade Portal - Comprehensive .gitignore
+# =============================================================================
+# This gitignore covers Python, FastAPI, React, databases, and all integrations
+
+# =============================================================================
+# ENVIRONMENT & CONFIGURATION FILES
+# =============================================================================
+# Never commit sensitive environment files
+.env
+.env.local
+.env.development
+.env.staging
+.env.production
+.env.test
+
+# Environment-specific config files
+config/local.py
+config/development.py
+config/production.py
+config/staging.py
+
+# Secrets and API keys
+secrets/
+*.key
+*.pem
+*.p12
+*.pfx
+.secrets
+api_keys.txt
+credentials.json
+
+# =============================================================================
+# PYTHON
+# =============================================================================
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff (if any Django components are added)
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff (if any Flask components are added)
+instance/
+.webassets-cache
+
+# Scrapy stuff (if any scraping is added)
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# poetry
+poetry.lock
+
+# pdm
+.pdm.toml
+
+# PEP 582
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# =============================================================================
+# FASTAPI / UVICORN
+# =============================================================================
+# FastAPI generated files
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Uvicorn logs
+uvicorn.log
+gunicorn.log
+
+# =============================================================================
+# DATABASE FILES
+# =============================================================================
+# SQLite databases (development)
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Database dumps and backups
+*.sql
+*.dump
+*.backup
+database_backups/
+backups/
+
+# PostgreSQL
+*.pgsql
+
+# MySQL
+*.mysql
+
+# =============================================================================
+# ALEMBIC MIGRATIONS
+# =============================================================================
+# Keep the alembic directory structure but ignore auto-generated files
+# Keep: alembic.ini, env.py, script.py.mako
+# Ignore: version files (these should be committed, but listing here for reference)
+# alembic/versions/*.py
+
+# Alembic cache
+alembic/__pycache__/
+alembic/versions/__pycache__/
+
+# =============================================================================
+# LOGS & TEMPORARY FILES
+# =============================================================================
+# Application logs
+logs/
+*.log
+log/
+app.log
+error.log
+access.log
+audit.log
+debug.log
+
+# Temporary files
+tmp/
+temp/
+.tmp/
+*.tmp
+*.temp
+
+# PID files
+*.pid
+
+# =============================================================================
+# FILE UPLOADS & MEDIA
+# =============================================================================
+# User uploaded files (keep directory structure)
+uploads/*
+!uploads/.gitkeep
+!uploads/README.md
+
+# Media files
+media/
+static/uploads/
+
+# Large files
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# =============================================================================
+# CACHE & REDIS
+# =============================================================================
+# Redis dumps
+dump.rdb
+
+# Cache directories
+.cache/
+cache/
+*.cache
+
+# =============================================================================
+# TESTING
+# =============================================================================
+# Test databases
+test.db
+test.sqlite
+test_*.sqlite3
+
+# Test uploads
+test_uploads/
+test_files/
+
+# Test artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Performance tests
+locustfile.py
+load_test_results/
+
+# =============================================================================
+# DEVELOPMENT TOOLS & IDEs
+# =============================================================================
+# VS Code
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json.example
+
+# PyCharm
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# =============================================================================
+# OPERATING SYSTEM FILES
+# =============================================================================
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.nfs*
+
+# =============================================================================
+# DOCKER
+# =============================================================================
+# Docker files (keep Dockerfile, ignore runtime files)
+.dockerignore
+docker-compose.override.yml
+.docker/
+
+# Docker volumes
+docker_volumes/
+
+# =============================================================================
+# NODE.JS / NPM (for any frontend tooling)
+# =============================================================================
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Yarn Integrity file
+.yarn-integrity
+
+# parcel-bundler cache
+.cache
+.parcel-cache
+
+# =============================================================================
+# MONITORING & OBSERVABILITY
+# =============================================================================
+# Prometheus
+prometheus_data/
+
+# Grafana
+grafana_data/
+
+# Monitoring logs
+monitoring/
+metrics/
+
+# =============================================================================
+# SECURITY & COMPLIANCE
+# =============================================================================
+# Security scan results
+security_reports/
+*.sarif
+
+# Compliance reports
+compliance_reports/
+
+# =============================================================================
+# INTEGRATION-SPECIFIC FILES
+# =============================================================================
+# Okta
+okta_config.json
+.okta/
+
+# Charles River Development (CRD)
+crd_config/
+crd_logs/
+crd_cache/
+
+# IVP
+ivp_data/
+ivp_cache/
+ivp_sync/
+
+# Bloomberg
+bloomberg_cache/
+bloomberg_data/
+bbg_data/
+
+# =============================================================================
+# DOCUMENTATION BUILD ARTIFACTS
+# =============================================================================
+# Sphinx build
+docs/_build/
+docs/build/
+
+# MkDocs
+site/
+
+# Jupyter Book
+_build/
+
+# =============================================================================
+# BACKUP & ARCHIVE FILES
+# =============================================================================
+# Backup files
+*.bak
+*.backup
+*.old
+*.orig
+
+# Archive files
+*.tar
+*.gz
+*.zip
+*.rar
+*.7z
+
+# =============================================================================
+# DEVELOPMENT & STAGING DATA
+# =============================================================================
+# Sample data files (keep templates, ignore actual data)
+sample_data/*.csv
+sample_data/*.xlsx
+sample_data/*.json
+!sample_data/template_*
+!sample_data/README.md
+
+# Development fixtures
+fixtures/
+dev_data/
+
+# =============================================================================
+# PERFORMANCE & PROFILING
+# =============================================================================
+# Profiling output
+*.prof
+*.pstats
+profiling_results/
+
+# Memory dumps
+*.hprof
+*.heapdump
+
+# =============================================================================
+# CUSTOM PROJECT-SPECIFIC
+# =============================================================================
+# OrbiMed specific temporary files
+orbimed_temp/
+trade_exports/
+recommendation_exports/
+
+# Analytics and reports (generated)
+reports/generated/
+analytics/output/
+
+# Migration backups
+migration_backups/
+
+# =============================================================================
+# VERSION CONTROL
+# =============================================================================
+# Git
+.git/
+.gitattributes
+
+# SVN
+.svn/
+
+# Mercurial
+.hg/
+
+# =============================================================================
+# KEEP THESE FILES (Examples of what NOT to ignore)
+# =============================================================================
+# Keep important configuration templates
+#!.env.example
+#!docker-compose.example.yml
+#!alembic.ini
+#!alembic/env.py
+#!requirements.txt
+
+# Keep important documentation
+#!README.md
+#!CHANGELOG.md
+#!docs/
+
+# Keep important scripts
+#!scripts/
+#!migrations/
+
+# Keep important tests
+#!tests/
