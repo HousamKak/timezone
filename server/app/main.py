@@ -5,7 +5,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import settings
 from app.core.database import engine
-from app.models import base  # Import to ensure tables are created
+from app.api.v1 import api_router
 
 app = FastAPI(
     title="OrbiMed Analyst Trade Portal API",
@@ -23,6 +23,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Include API routes
+app.include_router(api_router, prefix="/api/v1")
 
 @app.get("/")
 async def root():
