@@ -7,9 +7,6 @@ from app.core.config import settings
 from app.core.database import engine
 from app.models import base  # Import to ensure tables are created
 
-# Create tables on startup (for development)
-base.Base.metadata.create_all(bind=engine)
-
 app = FastAPI(
     title="OrbiMed Analyst Trade Portal API",
     description="API for managing trade recommendations and tickets",
