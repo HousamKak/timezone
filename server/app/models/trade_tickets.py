@@ -42,8 +42,8 @@ class TradeTicket(BaseModel):
     
     # Constraints
     __table_args__ = (
-        {'schema': None},
-        CheckConstraint("trade_direction IN ('Buy', 'Sell', 'Sell Short', 'Cover Short')", name='check_trade_direction'),
-        CheckConstraint("status IN ('Draft', 'Submitted_to_CRD', 'Booked', 'Working', 'Partially_Filled', 'Filled', 'Cancelled', 'CRD_Error')", name='check_status'),
+        CheckConstraint("trade_direction IN ('Buy', 'Sell', 'Sell Short', 'Cover Short')", name='check_trade_ticket_direction'),
+        CheckConstraint("status IN ('Draft', 'Submitted_to_CRD', 'Booked', 'Working', 'Partially_Filled', 'Filled', 'Cancelled', 'CRD_Error')", name='check_trade_ticket_status'),
         CheckConstraint("allocation_percentage IS NULL OR allocation_percentage BETWEEN 0 AND 100", name='check_allocation_percentage'),
+        {'schema': None},
     )

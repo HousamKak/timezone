@@ -36,9 +36,9 @@ class TradeRecommendation(BaseModel):
     
     # Constraints
     __table_args__ = (
-        {'schema': None},
-        CheckConstraint("trade_direction IN ('Buy', 'Sell', 'Sell Short', 'Cover Short')", name='check_trade_direction'),
+        CheckConstraint("trade_direction IN ('Buy', 'Sell', 'Sell Short', 'Cover Short')", name='check_trade_recommendation_direction'),
         CheckConstraint("analyst_score BETWEEN 1 AND 10", name='check_analyst_score'),
         CheckConstraint("time_horizon IN ('Trade', 'Short Term', 'Long Term', 'Custom Date')", name='check_time_horizon'),
-        CheckConstraint("status IN ('Draft', 'Proposed', 'Approved', 'Rejected')", name='check_status'),
+        CheckConstraint("status IN ('Draft', 'Proposed', 'Approved', 'Rejected')", name='check_trade_recommendation_status'),
+        {'schema': None},
     )

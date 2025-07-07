@@ -43,7 +43,11 @@ def test_connection():
     """Test database connection"""
     try:
         with engine.connect() as connection:
-            connection.execute("SELECT 1")
+            if settings.DATABASE_URL.startswith("sqlite"):
+                # Bypass SQLAlchemy Core parsing entirely
+                connection.exec_driver_sql("PRAGMA integrity_check;")
+            else:
+                connection.exec_driver_sql("SELECT 1")
         logger.info("Database connection successful")
         return True
     except Exception as e:

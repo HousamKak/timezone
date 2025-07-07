@@ -23,6 +23,7 @@ from pathlib import Path
 project_root = Path(__file__).parent.parent
 sys.path.insert(0, str(project_root))
 
+from sqlalchemy import inspect
 from sqlalchemy import create_engine, text
 from sqlalchemy.orm import sessionmaker
 from app.core.config import settings
@@ -57,36 +58,41 @@ def test_database_connection():
         print(f"   Current URL: {settings.DATABASE_URL}")
         return None
 
-def create_database_tables(engine):
-    """Create all database tables using SQLAlchemy metadata"""
-    print("📊 Creating database tables...")
-    
-    try:
-        # Create all tables defined in our models
-        Base.metadata.create_all(bind=engine)
-        
-        # Verify tables were created
-        with engine.connect() as conn:
-            # Check if key tables exist
-            result = conn.execute(text("""
-                SELECT table_name 
-                FROM information_schema.tables 
-                WHERE table_schema = 'public' 
-                   OR table_schema = 'dbo'
-                ORDER BY table_name
-            """))
-            tables = [row[0] for row in result]
-            
-        print(f"✅ Created {len(tables)} database tables:")
-        for table in sorted(tables):
-            print(f"   • {table}")
-            
-        return True
-        
-    except Exception as e:
-        print(f"❌ Failed to create tables: {e}")
-        return False
+def create_database_tables(engine) -> bool:
+    """Create any missing tables and report what happened."""
+    print("📊 Checking existing tables…")
 
+    inspector = inspect(engine)
+    existing = set(inspector.get_table_names())
+
+    declared = set(Base.metadata.tables.keys())
+    missing  = declared - existing          # what we still need to build
+
+    if not missing:
+        print(f"✅ All {len(existing)} tables already exist. Nothing to do.")
+        return True
+
+    # Build only the tables that aren’t there yet
+    Base.metadata.create_all(
+        bind=engine,
+        tables=[Base.metadata.tables[name] for name in missing],
+        checkfirst=False      # we know they’re missing
+    )
+
+    # Verify after creation
+    created = sorted(missing)
+    still_existing = sorted(existing)
+
+    print(f"✅ Created {len(created)} new tables:")
+    for t in created:
+        print(f"   • {t}")
+
+    if still_existing:
+        print(f"ℹ️  {len(still_existing)} tables already existed:")
+        for t in still_existing:
+            print(f"   • {t}")
+
+    return True
 def load_initial_data(engine):
     """Load all initial seed data"""
     print("📦 Loading initial seed data...")

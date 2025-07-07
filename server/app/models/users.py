@@ -48,8 +48,19 @@ class User(BaseModel):
     
     # Relationships
     role = relationship("Role", back_populates="users")
-    created_by_user = relationship("User", remote_side=[id])
-    user_permissions = relationship("UserPermission", back_populates="user")
+    created_by_user = relationship("User",foreign_keys=[created_by], remote_side=lambda: [User.id], backref="created_users",           
+    )
+    user_permissions = relationship( "UserPermission", back_populates="user",
+        foreign_keys=lambda: [UserPermission.user_id],   # <-- unambiguous
+        cascade="all, delete-orphan"                    
+    )
+
+    # 2️⃣ permissions this user **granted** to others (handy to have)
+    granted_permissions = relationship(
+        "UserPermission",
+        back_populates="granter",
+        foreign_keys=lambda: [UserPermission.granted_by]
+    )
     
     # Business relationships
     recommendations = relationship("TradeRecommendation", back_populates="analyst", foreign_keys="TradeRecommendation.analyst_id")
@@ -87,6 +98,14 @@ class UserPermission(BaseModel):
     is_active = Column(Boolean, default=True, nullable=False)
     
     # Relationships
-    user = relationship("User", back_populates="user_permissions", foreign_keys=[user_id])
+    user = relationship(
+        "User",
+        back_populates="user_permissions",
+        foreign_keys=[user_id]
+    )
     permission = relationship("Permission", back_populates="user_permissions")
-    granter = relationship("User", foreign_keys=[granted_by])
+    granter = relationship(
+        "User",
+        back_populates="granted_permissions",
+        foreign_keys=[granted_by]
+    )
