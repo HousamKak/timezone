@@ -5,6 +5,9 @@ from typing import Optional, List
 from datetime import datetime, date
 from decimal import Decimal
 
+from .securities import SecurityResponse
+from .strategies import StrategyResponse
+
 class RecommendationCreate(BaseModel):
     security_id: int
     trade_direction: str = Field(..., pattern="^(Buy|Sell|Sell Short|Cover Short)$")

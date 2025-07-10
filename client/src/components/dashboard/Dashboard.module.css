@@ -1,0 +1,99 @@
+/* 
+ * Dashboard-specific styles for button groups and specialized card layouts
+ */
+
+/* Filter button groups in dashboard cards */
+.filterButtons {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.filterButtons .p-button {
+  font-size: 0.7rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+/* Timeframe button groups for charts */
+.timeframeButtons {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.timeframeButtons .p-button {
+  font-size: 0.65rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+  min-width: 2rem;
+}
+
+/* Dashboard card headers with action buttons */
+.dashboardCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboardCardHeader .card-title {
+  margin: 0;
+}
+
+.dashboardCardHeader .cardActions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Performance summary card specific styling */
+.performanceCardHeader .p-button {
+  color: var(--text-color-secondary);
+}
+
+.performanceCardHeader .p-button:hover {
+  color: var(--text-color);
+}
+
+.tradeFilterButtons {
+  display: flex;
+  gap: 0.15rem;
+}
+
+.tradeFilterButtons .p-button {
+  font-size: 0.7rem;
+  padding: 0.2rem 0.6rem;
+  transition: all 0.2s ease;
+}
+
+.chartCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chartTimeframes {
+  display: flex;
+  gap: 0.15rem;
+}
+
+.chartTimeframes .p-button {
+  font-size: 0.65rem;
+  padding: 0.15rem 0.45rem;
+  min-width: 2.5rem;
+}
+
+/* Responsive adjustments for dashboard */
+@media (max-width: 768px) {
+  .chartCardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .filterButtons,
+  .timeframeButtons,
+  .tradeFilterButtons {
+    flex-wrap: wrap;
+  }
+}

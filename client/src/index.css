@@ -1,0 +1,167 @@
+/* PrimeReact CSS imports - Must be in this order */
+@import 'primereact/resources/themes/lara-light-indigo/theme.css';
+@import 'primereact/resources/primereact.min.css';
+@import 'primeicons/primeicons.css';
+@import 'primeflex/primeflex.css';
+
+/* --- Minimal global styles for modern look --- */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  font-size: 12px;
+  background: var(--surface-ground, #f8f9fa);
+  color: var(--text-color, #222);
+}
+
+.p-button, button.p-button {
+  font-family: inherit;
+  font-size: 0.78rem;
+  padding: 0.22rem 0.7rem;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+/* Optional: Make small buttons even sleeker */
+.p-button.p-button-sm, button.p-button.p-button-sm {
+  font-size: 0.68rem;
+  padding: 0.12rem 0.4rem;
+  border-radius: 5px;
+}
+
+/* Make navigation and menu items more compact */
+.p-menubar .p-menuitem-text,
+.p-tabmenu .p-menuitem-link,
+.navbar, .navbar * {
+  font-size: 12px;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.p-card {
+  padding-bottom: 0.5rem;
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.p-card .p-card-body {
+  padding: 0.5rem 1rem;
+}
+
+.p-card .p-card-content {
+  padding: 0;
+}
+
+/* Global card header banner styling */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--surface-100, #f1f3f4);
+  margin: -0.7rem -1rem 0.75rem -1rem;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid var(--surface-300, #dee2e6);
+  border-radius: 6px 6px 0 0;
+}
+
+.card-header .card-title {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-color, #333);
+}
+
+.card-header .p-button {
+  font-size: 0.75rem;
+}
+
+h3 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+/* Validation error styling */
+.p-invalid:not(.p-highlight) {
+  border-color: #e74c3c !important;
+  box-shadow: 0 0 0 0.2rem rgba(231, 76, 60, 0.2) !important;
+}
+
+.p-invalid:not(.p-highlight):focus {
+  border-color: #e74c3c !important;
+  box-shadow: 0 0 0 0.2rem rgba(231, 76, 60, 0.3) !important;
+}
+
+/* Override for dropdowns and multiselect to ensure red border shows */
+.p-dropdown.p-invalid .p-dropdown-trigger,
+.p-dropdown.p-invalid .p-inputtext {
+  border-color: #e74c3c !important;
+}
+
+.p-multiselect.p-invalid .p-multiselect-trigger,
+.p-multiselect.p-invalid .p-inputtext {
+  border-color: #e74c3c !important;
+}
+
+/* Additional styling for number inputs */
+.p-inputnumber.p-invalid .p-inputtext {
+  border-color: #e74c3c !important;
+}
+
+/* Calendar styling */
+.p-calendar.p-invalid .p-inputtext {
+  border-color: #e74c3c !important;
+}
+
+/* Global compact tooltip styling */
+.p-tooltip {
+  font-size: 11px !important;
+}
+
+.p-tooltip .p-tooltip-text {
+  font-size: 11px !important;
+  padding: 0.25rem 0.5rem !important;
+  line-height: 1.3 !important;
+}
+
+/* Compact navbar styling */
+.header-container {
+  min-height: 48px;
+}
+
+.header-container .p-button {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  line-height: 1.2;
+}
+
+.header-container .p-button.p-button-sm {
+  font-size: 0.7rem;
+  padding: 0.2rem 0.4rem;
+}
+
+/* Remove border and selected state from navbar buttons */
+.header-container .p-button:not(.p-button-rounded) {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.header-container .p-button:not(.p-button-rounded):hover {
+  background: rgba(0, 0, 0, 0.05) !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.header-container .p-button:not(.p-button-rounded):focus {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.header-container .p-button:not(.p-button-rounded):active {
+  border: none !important;
+  box-shadow: none !important;
+}

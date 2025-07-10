@@ -1,0 +1,176 @@
+.tableContainer {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.tradeRequestsTable {
+  min-height: 400px;
+}
+
+.tradeRequestsTable .p-datatable-header {
+  background: #f8f9fa;
+  border: none;
+  padding: 1rem;
+}
+
+.tradeRequestsTable .p-datatable-thead > tr > th {
+  background: #f8f9fa;
+  border: none;
+  font-weight: 600;
+  color: #374151;
+  padding: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.tradeRequestsTable .p-datatable-tbody > tr > td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: middle;
+}
+
+.tradeRequestsTable .p-datatable-tbody > tr:hover {
+  background: #f9fafb;
+}
+
+.tickerCell {
+  display: flex;
+  align-items: center;
+}
+
+.ticker {
+  font-weight: 600;
+  color: #1f2937;
+  font-size: 0.875rem;
+}
+
+.tradeDirection {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.buy {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.sell {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.sellShort {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.coverShort {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
+.strategyContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.strategyTag {
+  font-size: 0.75rem;
+}
+
+.moreStrategies {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.price {
+  font-weight: 500;
+  color: #1f2937;
+}
+
+.priceContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.change {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.positive {
+  color: #059669;
+}
+
+.negative {
+  color: #dc2626;
+}
+
+.date {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.analyst {
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.noFiles {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.filesContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.filesButton {
+  padding: 0.25rem;
+}
+
+.filesCount {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.indexWeight {
+  font-size: 0.875rem;
+  color: #374151;
+  font-weight: 500;
+}
+
+.actionsContainer {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.acceptButton {
+  font-size: 0.75rem;
+  padding: 0.375rem 0.75rem;
+}
+
+.rejectButton {
+  font-size: 0.75rem;
+  padding: 0.375rem 0.75rem;
+}
+
+.statusTag {
+  font-size: 0.75rem;
+}
+
+.noData {
+  color: #9ca3af;
+  font-size: 0.875rem;
+}

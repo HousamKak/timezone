@@ -1,0 +1,253 @@
+/* 
+ * Component-scoped styles for TradeRecommendationGrid
+ */
+
+.compactTable {
+  font-size: 13px; /* More readable than 11px */
+}
+
+/* Balanced row heights and cell padding */
+.compactTable :global(.p-datatable-tbody) > tr {
+  height: 40px; /* More breathing room than 32px */
+}
+
+.compactTable :global(.p-datatable-thead) > tr > th {
+  padding: 0.5rem 0.75rem; /* More generous header padding */
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2;
+  background: var(--surface-50, #f8f9fa);
+  border-bottom: 1px solid var(--surface-300, #dee2e6);
+  border-right: 1px solid var(--surface-200, #e9ecef);
+}
+
+/* Remove right border from last header column */
+.compactTable :global(.p-datatable-thead) > tr > th:last-child {
+  border-right: none;
+}
+
+.compactTable :global(.p-datatable-tbody) > tr > td {
+  padding: 0.4rem 0.75rem; /* Balanced cell padding */
+  line-height: 1.3;
+  border-bottom: 1px solid var(--surface-200, #e9ecef);
+  border-right: 1px solid var(--surface-200, #e9ecef);
+  vertical-align: middle;
+  background: var(--surface-0, #ffffff);
+}
+
+/* Remove right border from last column */
+.compactTable :global(.p-datatable-tbody) > tr > td:last-child {
+  border-right: none;
+}
+
+/* Balanced input components within cells */
+.compactTable :global(.p-inputtext),
+.compactTable :global(.p-dropdown),
+.compactTable :global(.p-multiselect),
+.compactTable :global(.p-calendar) {
+  font-size: 13px;
+  padding: 0.3rem 0.5rem;
+  line-height: 1.2;
+  border: none;
+  box-shadow: none;
+}
+
+/* Validation error states */
+.compactTable :global(.p-invalid) {
+  border: 2px solid var(--red-500, #ef4444) !important;
+  box-shadow: 0 0 0 1px var(--red-500, #ef4444) !important;
+}
+
+.compactTable :global(.p-invalid):focus {
+  border: 2px solid var(--red-600, #dc2626) !important;
+  box-shadow: 0 0 0 2px var(--red-200, #fecaca) !important;
+}
+
+.compactTable :global(.p-dropdown.p-invalid .p-dropdown-trigger),
+.compactTable :global(.p-multiselect.p-invalid .p-multiselect-trigger) {
+  border-left: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+}
+
+/* Remove borders specifically for dropdown panels */
+.compactTable :global(.p-dropdown .p-dropdown-panel) {
+  border: 1px solid var(--surface-300, #dee2e6);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.compactTable :global(.p-multiselect .p-multiselect-panel) {
+  border: 1px solid var(--surface-300, #dee2e6);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Focus states for inputs within grid */
+.compactTable :global(.p-inputtext:focus),
+.compactTable :global(.p-dropdown:focus),
+.compactTable :global(.p-multiselect:focus),
+.compactTable :global(.p-calendar:focus) {
+  border: none;
+  box-shadow: 0 0 0 2px var(--primary-200, #bbdefb);
+  outline: none;
+}
+
+.compactTable :global(.p-dropdown-trigger),
+.compactTable :global(.p-multiselect-trigger) {
+  width: 24px; /* Standard trigger width */
+}
+
+.compactTable :global(.p-button) {
+  font-size: 12px;
+  padding: 0.25rem 0.5rem;
+  height: 28px;
+  min-width: 28px;
+}
+
+/* Balanced multiselect display */
+.compactTable :global(.p-multiselect-label) {
+  padding: 0.3rem 0.5rem;
+  line-height: 1.2;
+}
+
+.compactTable :global(.p-multiselect-token) {
+  font-size: 11px;
+  padding: 0.15rem 0.3rem;
+  margin: 0.1rem;
+}
+
+/* Calendar input specifics */
+.compactTable :global(.p-calendar .p-inputtext) {
+  height: 32px;
+  font-size: 13px;
+}
+
+/* File upload area */
+.compactTable :global(.p-fileupload) {
+  font-size: 12px;
+}
+
+.compactTable :global(.p-fileupload-buttonbar) {
+  padding: 0.3rem;
+  background: transparent;
+  border: none;
+}
+
+.compactTable :global(.p-fileupload-content) {
+  padding: 0.3rem;
+  border: 1px dashed var(--surface-300, #dee2e6);
+  background: var(--surface-0, #ffffff);
+}
+
+/* Action buttons in the grid */
+.compactTable :global(.p-button.p-button-text) {
+  padding: 0.2rem;
+  font-size: 12px;
+}
+
+.compactTable :global(.p-button.p-button-rounded) {
+  width: 28px;
+  height: 28px;
+}
+
+/* Scrollable table container */
+.tableContainer {
+  border: 1px solid var(--surface-300, #dee2e6);
+  border-radius: 6px;
+  overflow: hidden;
+  background: white;
+}
+
+/* Ensure the DataTable doesn't add extra margins */
+.compactTable :global(.p-datatable) {
+  margin: 0;
+}
+
+.compactTable :global(.p-datatable-wrapper) {
+  border-radius: 0;
+}
+
+/* Make sure selection and hover states are still visible */
+.compactTable :global(.p-datatable-tbody) > tr:hover {
+  background: var(--surface-100, #f1f3f4);
+}
+
+.compactTable :global(.p-datatable-tbody) > tr.p-highlight {
+  background: var(--primary-50, #e3f2fd);
+  color: var(--primary-700, #1976d2);
+}
+
+/* Row number column styling */
+.rowNumber {
+  text-align: center;
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--text-color-secondary, #6c757d);
+}
+
+/* Target price input - balanced width */
+.compactTable :global(.target-price-input .p-inputnumber-input) {
+  width: 125px;
+  min-width: 125px;
+}
+
+/* Date picker input - ensure full placeholder is visible */
+.compactTable :global(.date-picker-input .p-inputtext) {
+  width: 120px;
+  min-width: 120px;
+}
+
+/* Pagination styling to match table font size */
+.compactTable :global(.p-paginator) {
+  font-size: 12px;
+  padding: 0.5rem;
+  border-top: 1px solid var(--surface-300, #dee2e6);
+}
+
+.compactTable :global(.p-paginator .p-paginator-pages .p-paginator-page),
+.compactTable :global(.p-paginator .p-paginator-first),
+.compactTable :global(.p-paginator .p-paginator-prev),
+.compactTable :global(.p-paginator .p-paginator-next),
+.compactTable :global(.p-paginator .p-paginator-last) {
+  font-size: 12px;
+  padding: 0.25rem 0.5rem;
+  min-width: 28px;
+  height: 28px;
+}
+
+.compactTable :global(.p-paginator .p-dropdown) {
+  font-size: 12px !important;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  padding: 0 !important;
+  border: 1px solid var(--surface-300, #dee2e6) !important;
+  box-shadow: none !important;
+}
+
+.compactTable :global(.p-paginator .p-dropdown .p-dropdown-label) {
+  font-size: 12px !important;
+  padding: 0.25rem 0.5rem !important;
+  line-height: 1.2;
+}
+
+.compactTable :global(.p-paginator .p-dropdown .p-dropdown-trigger) {
+  width: 24px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Specific spacing for paginator dropdown only */
+.paginatorDropdownSpacing :global(.p-paginator .p-dropdown) {
+  width: 70px !important;
+  min-width: 70px !important;
+}
+
+.compactTable :global(.p-paginator .p-paginator-current) {
+  font-size: 12px;
+  padding: 0.25rem 0.5rem;
+  display: flex;
+  align-items: center;
+  height: 28px;
+}
